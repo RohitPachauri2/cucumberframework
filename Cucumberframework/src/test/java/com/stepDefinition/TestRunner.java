@@ -8,8 +8,9 @@ import io.cucumber.testng.CucumberOptions;
     glue = "com.stepDefinition", // Path to your step definitions
     plugin = {"pretty", "html:target/cucumber-reports"},
     monochrome = true,
-    dryRun =true
-    //tags = "@smoketest and @regressiontest" // This will run scenarios tagged with either of the two tags
+    dryRun =false,
+    tags= "@smoke or @regression"
+    //tags = @smoke// This will run scenarios tagged with either of the two tags
 )
 public class TestRunner extends AbstractTestNGCucumberTests {
 }

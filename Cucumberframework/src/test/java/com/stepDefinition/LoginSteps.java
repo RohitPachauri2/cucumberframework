@@ -2,9 +2,11 @@ package com.stepDefinition;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 
@@ -20,8 +22,8 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class LoginSteps {
 
 	WebDriver driver;
-	LoginPage lp=new LoginPage(driver);
-
+	LoginPage lp;
+	
 	@Given("the user is already in login page")
 	public void the_user_is_already_in_login_page() {
 		System.out.println("Step1: User is on Login Page");
@@ -30,6 +32,7 @@ public class LoginSteps {
 		driver.get("https://www.saucedemo.com/v1/");
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
 		driver.manage().window().maximize();
+		lp = new LoginPage(driver);
 	}
 
 //    @When("^user enters \"(.*)\" and \"(.*)\"$")--when not using Examples tag
@@ -55,13 +58,23 @@ public class LoginSteps {
 	public void clicks_on_login_button() {
 		System.out.println("Step3: User clicks on login button");
 		lp.loginbutton();
+		
+		
+		
 	}
 
 	@Then("user should land on home page")
 	public void user_should_land_on_home_page() {
-		System.out.println("Step4: User lands on home page");
-
+	    if(driver.getCurrentUrl().contains("inventory")) {
+	    	System.out.println("Step4: User is on home Page");
+	    }
+	    else {
+	    	System.out.println("Step4: User is not on home Page!!!Closing window");
+	    	driver.quit();
+	    }
 	}
+
+
 
 	@Then("user is on home page")
 	public void user_is_on_home_page() throws InterruptedException {
