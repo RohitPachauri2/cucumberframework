@@ -21,10 +21,12 @@ public class LoginPage {
 	WebElement password;
 	@FindBy(id = "login-button")
 	WebElement lbutton;
-	@FindBy(xpath = "/html/body/div/div[2]/div[2]/div/div[2]/div/div[2]/div[3]/button")
+	@FindBy(xpath = "//button[@id=\"add-to-cart-sauce-labs-backpack\"]")
 	WebElement element1;
-	@FindBy(css = "div.inventory_item:nth-child(5) > div:nth-child(3) > button:nth-child(2)")
+	@FindBy(xpath = "//button[@id=\"add-to-cart-sauce-labs-bike-light\"]")
 	WebElement element2;
+	
+	
 
 	public void usernamepassword(String uname, String pass) throws InterruptedException {
 		username.sendKeys(uname);
@@ -41,4 +43,6 @@ public class LoginPage {
 		element2.click();
 		Thread.sleep(2000);
 	}
+
+	
 }
