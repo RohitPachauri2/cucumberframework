@@ -35,7 +35,7 @@ public class ITestListnerClass implements ITestListener {
 	}
 
 	public void onTestStart(ITestResult result) {
-
+		System.out.println("Test is starting-------------");
 	}
 
 	public void onTestSuccess(ITestResult result) {
