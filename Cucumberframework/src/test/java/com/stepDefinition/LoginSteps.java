@@ -58,7 +58,7 @@ public class LoginSteps {
 //	}
 
 	@Then("clicks on login button")
-	public void clicks_on_login_button() {
+	public void clicks_on_login_button() throws InterruptedException {
 		System.out.println("Step3: User clicks on login button");
 		lp.loginbutton();
 

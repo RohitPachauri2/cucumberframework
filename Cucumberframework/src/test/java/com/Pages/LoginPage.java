@@ -12,7 +12,7 @@ public class LoginPage {
 
 	public LoginPage(WebDriver driver) {
 		this.driver = driver;
-		
+
 		PageFactory.initElements(driver, this);
 	}
 
