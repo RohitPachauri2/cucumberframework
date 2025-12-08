@@ -12,6 +12,7 @@ public class LoginPage {
 
 	public LoginPage(WebDriver driver) {
 		this.driver = driver;
+		
 		PageFactory.initElements(driver, this);
 	}
 
@@ -25,8 +26,6 @@ public class LoginPage {
 	WebElement element1;
 	@FindBy(xpath = "//button[@id=\"add-to-cart-sauce-labs-bike-light\"]")
 	WebElement element2;
-	
-	
 
 	public void usernamepassword(String uname, String pass) throws InterruptedException {
 		username.sendKeys(uname);
@@ -34,8 +33,9 @@ public class LoginPage {
 		Thread.sleep(2000);
 	}
 
-	public void loginbutton() {
+	public void loginbutton() throws InterruptedException {
 		lbutton.click();
+		Thread.sleep(2000);
 	}
 
 	public void enterelements() throws InterruptedException {
@@ -44,5 +44,4 @@ public class LoginPage {
 		Thread.sleep(2000);
 	}
 
-	
 }
