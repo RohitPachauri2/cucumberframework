@@ -39,12 +39,12 @@ public class LoginSteps {
 	}
 
 //    @When("^user enters \"(.*)\" and \"(.*)\"$")--when not using Examples tag
-//	@When("^user enters (.*) and (.*)$")
-//	public void user_enters_the_username_and_password(String username, String password) throws InterruptedException {
-//		System.out.println("Step2: User enters username and password");
-//
-//		lp.usernamepassword(username, password);
-//	}
+	@When("^user enters (.*) and (.*)$")
+	public void user_enters_the_username_and_password(String username, String password) throws InterruptedException {
+		System.out.println("Step2: User enters username and password");
+
+		lp.usernamepassword(username, password);
+	}
 
 //	@When("user enters credentials with datatable")
 //	public void user_enters_credentials_with_datatable(DataTable datatable) {

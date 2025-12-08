@@ -1,63 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-10-21T07:52:09 IST" name="Suite" finished-at="2025-10-21T07:52:38 IST" duration-ms="28198">
+  <suite started-at="2025-12-08T09:10:17 IST" name="Default suite" finished-at="2025-12-08T09:10:18 IST" duration-ms="850">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.stepDefinition.TestRunner2@6c6cb480]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.stepDefinition.TestRunner@4e50c791]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2025-10-21T07:52:09 IST" name="Test" finished-at="2025-10-21T07:52:38 IST" duration-ms="28198">
-      <class name="com.stepDefinition.TestRunner2">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.stepDefinition.TestRunner2@6c6cb480]" started-at="2025-10-21T07:52:10 IST" name="setUpClass" finished-at="2025-10-21T07:52:10 IST" duration-ms="643" status="PASS">
+    <test started-at="2025-12-08T09:10:17 IST" name="Default test" finished-at="2025-12-08T09:10:18 IST" duration-ms="850">
+      <class name="com.stepDefinition.TestRunner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.stepDefinition.TestRunner@4e50c791]" started-at="2025-12-08T09:10:17 IST" name="setUpClass" finished-at="2025-12-08T09:10:18 IST" duration-ms="669" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@6b63abdc]]>
+                <![CDATA[org.testng.TestRunner@3c8bdd5b]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.stepDefinition.TestRunner2@6c6cb480]" started-at="2025-10-21T07:52:10 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-10-21T07:52:32 IST" duration-ms="21769" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.stepDefinition.TestRunner@4e50c791]" started-at="2025-12-08T09:10:18 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-12-08T09:10:18 IST" duration-ms="102" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["scenario1"]]>
+                <![CDATA["Test the Login Validation for tags with smoke"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["User is checking multiple scenarios of saucedemo application"]]>
+                <![CDATA["Test the Login Fnctionality of SauceDemo with datatable also"]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.stepDefinition.TestRunner2@6c6cb480]" started-at="2025-10-21T07:52:32 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-10-21T07:52:38 IST" duration-ms="5415" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["scenario2"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["User is checking multiple scenarios of saucedemo application"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.stepDefinition.TestRunner2@6c6cb480]" started-at="2025-10-21T07:52:38 IST" name="tearDownClass" finished-at="2025-10-21T07:52:38 IST" duration-ms="26" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.stepDefinition.TestRunner@4e50c791]" started-at="2025-12-08T09:10:18 IST" name="tearDownClass" finished-at="2025-12-08T09:10:18 IST" duration-ms="25" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
-      </class> <!-- com.stepDefinition.TestRunner2 -->
-    </test> <!-- Test -->
-  </suite> <!-- Suite -->
+      </class> <!-- com.stepDefinition.TestRunner -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>
