@@ -1,7 +1,12 @@
 package com.stepDefinition;
 
 import java.io.File;
+import java.io.IOException;
 
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -18,6 +23,8 @@ public class ITestListnerClass implements ITestListener {
 	ExtentSparkReporter htmlReporter;
 	ExtentReports reports;
 	ExtentTest test;
+	LoginSteps ls;
+	WebDriver driver;
 
 	public void configureReport() {
 		htmlReporter = new ExtentSparkReporter("ExtentListenerReportDemocucumber.html");
@@ -52,11 +59,15 @@ public class ITestListnerClass implements ITestListener {
 				MarkupHelper.createLabel("Name of the skip test case is: " + result.getName(), ExtentColor.RED));
 
 		String screenShotPath = System.getProperty("user.dir") + "\\Screenshots\\" + result.getName() + ".png";
-
-		File screenShotFile = new File(screenShotPath);
-
-		if (screenShotFile.exists()) {
-			test.fail("Captured Screenshot is below:" + test.addScreenCaptureFromPath(screenShotPath));
+		driver=DriverFactory.getDriver();
+		File screenfile=new File(screenShotPath);
+		TakesScreenshot tk=(TakesScreenshot)driver;
+		File newfile=tk.getScreenshotAs(OutputType.FILE);
+		try {
+			FileUtils.moveFile(newfile,screenfile);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 

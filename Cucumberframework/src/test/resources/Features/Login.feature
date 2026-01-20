@@ -7,7 +7,7 @@ Feature: Test the Login Fnctionality of SauceDemo with datatable also
 @smoke
   Scenario Outline: Test the Login Validation for tags with smoke
     Given the user is already in login page
-    When user enters <username> and <password>
+    When user enters "<username>" and "<password>"
     And clicks on login button
     And user should land on home page
     Then user is on home page

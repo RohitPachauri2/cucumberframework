@@ -27,11 +27,11 @@ public class LoginSteps {
 	WebDriver driver;
 	LoginPage lp;
 
+
 	@Given("the user is already in login page")
 	public void the_user_is_already_in_login_page() {
 		System.out.println("Step1: User is on Login Page");
-		WebDriverManager.firefoxdriver().setup();
-		driver = new FirefoxDriver();
+		driver=DriverFactory.getDriver();
 		driver.get("https://www.saucedemo.com");
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
 		driver.manage().window().maximize();
@@ -39,7 +39,7 @@ public class LoginSteps {
 	}
 
 //    @When("^user enters \"(.*)\" and \"(.*)\"$")--when not using Examples tag
-	@When("^user enters (.*) and (.*)$")
+	@When("user enters {string} and {string}")
 	public void user_enters_the_username_and_password(String username, String password) throws InterruptedException {
 		System.out.println("Step2: User enters username and password");
 
@@ -66,7 +66,7 @@ public class LoginSteps {
 
 	@Then("user should land on home page")
 	public void user_should_land_on_home_page() {
-		if (driver.getCurrentUrl().contains("inventory")) {
+		if (driver.getCurrentUrl().contains("inventory1")) {
 			System.out.println("Step4: User is on home Page");
 		} else {
 			System.out.println("Step4: User is not on home Page!!!Closing window");

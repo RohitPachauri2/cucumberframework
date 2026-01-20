@@ -7,9 +7,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage {
-	WebDriver driver;
+import com.stepDefinition.Reusablefunctions;
 
+
+public class LoginPage{
+	WebDriver driver;
+	Reusablefunctions rf;
 	public LoginPage(WebDriver driver) {
 		this.driver = driver;
 
@@ -28,19 +31,20 @@ public class LoginPage {
 	WebElement element2;
 
 	public void usernamepassword(String uname, String pass) throws InterruptedException {
+		rf=new Reusablefunctions(driver);
 		username.sendKeys(uname);
 		password.sendKeys(pass);
 		Thread.sleep(2000);
 	}
 
 	public void loginbutton() throws InterruptedException {
-		lbutton.click();
+		rf.clicking(lbutton);
 		Thread.sleep(2000);
 	}
 
 	public void enterelements() throws InterruptedException {
-		element1.click();
-		element2.click();
+		rf.clicking(element1);
+		rf.clicking(element2);
 		Thread.sleep(2000);
 	}
 
